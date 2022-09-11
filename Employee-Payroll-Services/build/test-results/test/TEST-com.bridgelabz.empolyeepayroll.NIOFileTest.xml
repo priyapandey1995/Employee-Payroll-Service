@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabz.empolyeepayroll.NIOFileTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-11T21:29:33" hostname="PRIYA" time="0.056">
+  <properties/>
+  <testcase name="givenPathWhenChecked_ThenConfirm()" classname="com.bridgelabz.empolyeepayroll.NIOFileTest" time="0.056"/>
+  <system-out><![CDATA[C:\Users\pande\TempGround\temp1
+C:\Users\pande\TempGround\temp2
+C:\Users\pande\TempGround\temp3
+C:\Users\pande\TempGround\temp4
+C:\Users\pande\TempGround\temp5
+C:\Users\pande\TempGround\temp6
+C:\Users\pande\TempGround\temp7
+C:\Users\pande\TempGround\temp8
+C:\Users\pande\TempGround\temp9
+C:\Users\pande\TempGround\temp1
+C:\Users\pande\TempGround\temp2
+C:\Users\pande\TempGround\temp3
+C:\Users\pande\TempGround\temp4
+C:\Users\pande\TempGround\temp5
+C:\Users\pande\TempGround\temp6
+C:\Users\pande\TempGround\temp7
+C:\Users\pande\TempGround\temp8
+C:\Users\pande\TempGround\temp9
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
