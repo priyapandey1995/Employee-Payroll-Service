@@ -18,9 +18,11 @@ public class EmployeePayrollServiceTest {
                 new EmployeePayrollData(3,"niraj",40000)
         };
         EmployeePayrollService employeeService = new EmployeePayrollService(Arrays.asList(arrayOfEmployees));
-
-        employeeService.writeEmployeeData(FILE_IO);
-//        employeeService.printEmployeeData(FILE_IO);
+        /**
+         * employee payroll service to write and print on the file.
+         */
+         employeeService.writeEmployeeData(FILE_IO);
+          employeeService.printEmployeeData(FILE_IO);
     }
 }
 
