@@ -51,8 +51,24 @@ public class EmployeePayrollService {
         }
     }
 
+    /**
+     * function to print
+     * @param ioService
+     */
    public void printEmployeeData(IOService ioService) {
         if(ioService.equals(IOService.FILE_IO))
             new EmployeePayrollFileIOService().printData();
+    }
+
+    /**
+     * function to count the number of entries
+     * @param ioService
+     * @return
+     *
+     */
+    public long countEntries(IOService ioService){
+        if(ioService.equals(IOService.FILE_IO))
+            new EmployeePayrollFileIOService().countEntry();
+        return new EmployeePayrollFileIOService().countEntry();
     }
 }
