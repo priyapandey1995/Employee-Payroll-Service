@@ -1,46 +1,58 @@
-/**
- * Purpose:In empolyee payroll services is to read and write the empolyee payroll data to console
- * Author:Priya
- *
- */
 package com.bridgelabz.empolyeepayroll;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+
+//EmployeePayrollService Class to Perform Operations
 public class EmployeePayrollService {
+    List<EmployeePayrollData> employeePayrollDataList;
+    public EmployeePayrollService(List<EmployeePayrollData> employeePayrollDataList) {
+        super();
+        this.employeePayrollDataList = employeePayrollDataList;
+    }
+    public EmployeePayrollService(){
+        super();
+        this.employeePayrollDataList = new ArrayList<>();
+    }
+
     /**
-     * Firstly ,Arraylist is created to store the data
-     *then ,we read those attributes which is declared in employee payroll data via ReadEmployee function
-     * Object of employee payroll data is created in employee service in-order to access those id,salary and name
-     * once the data is accessed we add those data into the arraylist
-     * then its printed onto the console,which is called as output stream
+     * an array list is created to store the data of an employee
+     * a read employee() is created
+     * to scan the id ,name and salary object of employee payroll data is created
+     * and hence these objects are added to arraylist;
+     * secondly,to print the data inside the arraylist,write employee() is created
      *
      */
-ArrayList<EmployeePayrollData> employeeDataList = new ArrayList<>();
+    public enum IOService{CONSOLE_IO,FILE_IO}
 
-public void toReadEmployeePayrollData(Scanner consoleInputReader){
-    System.out.println("Enter the Employee Id");
-    int id = consoleInputReader.nextInt();
+    //Function to Read Employee Data
+    public void readEmployeeData() {
 
-    System.out.println("Enter the Employee Name:");
-    String name = consoleInputReader.next();
+        EmployeePayrollData empData = new EmployeePayrollData();
 
-    System.out.println("Enter the Employee Salary");
-    double salary = consoleInputReader.nextDouble();
+        Scanner consoleInput = new Scanner(System.in);
+        System.out.println("Please Enter Employee ID");
+        empData.setId(consoleInput.nextInt());
+        System.out.println("Please Enter Employee Name");
+        empData.setName(consoleInput.next());
+        System.out.println("Please Enter Salary of Employee");
+        empData.setSalary(consoleInput.nextInt());
+        employeePayrollDataList.add(empData);
 
-    //Adding all data's to the list
+    }
+    //Function to Write Employee Data
+    public void writeEmployeeData(IOService ioService){
+        if(ioService.equals(IOService.CONSOLE_IO)){
+            System.out.println("Writing Employee Payroll Using Console \n"+employeePayrollDataList);
+        } else if (ioService.equals(IOService.FILE_IO)) {
+            new EmployeePayrollFileIOService().writeData(employeePayrollDataList);
+        }
+    }
 
-    employeeDataList.add(new EmployeePayrollData(id , name , salary));
-
-}
-
-    /**
-     * method to write the data
-     */
-    public void toWriteEmployeePayrollData(){
-    System.out.println("Employee payroll data are:" + employeeDataList);
-}
-
-
+//    public void printEmployeeData(IOService ioService) {
+//        if(ioService.equals(IOService.FILE_IO))
+//            new EmployeePayrollFileIOService().printData();
+//    }
 }
